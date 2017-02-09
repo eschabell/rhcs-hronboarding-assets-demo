@@ -176,7 +176,7 @@ fi
 echo
 echo "Starting a build, this takes some time to upload all of the product sources for build..."
 echo
-oc start-build rhcs-hronboaring-demo --from-dir=. --follow=true --wait=true
+oc start-build rhcs-hronboarding-demo --from-dir=. --follow=true --wait=true
 
 if [ $? -ne 0 ]; then
 	echo
