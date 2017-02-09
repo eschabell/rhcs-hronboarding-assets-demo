@@ -35,7 +35,6 @@ RUN sed -i "s:<installpath>.*</installpath>:<installpath>$BPMS_HOME</installpath
 
 # Copy demo and support files
 COPY support/bpm-suite-demo-niogit $BPMS_HOME/bin/.niogit
-COPY projects /opt/jboss/bpms-projects
 COPY support/userinfo.properties $BPMS_HOME/standalone/deployments/business-central.war/WEB-INF/classes/
 COPY support/standalone.xml $BPMS_HOME/standalone/configuration/
 COPY support/start.sh /opt/jboss/
@@ -49,7 +48,6 @@ RUN chown -R 1000:root $BPMS_HOME \
   && /opt/jboss/fix-permissions /etc/group \
   && /opt/jboss/fix-permissions /opt/jboss/start.sh \
   && /opt/jboss/fix-permissions /opt/jboss/.m2 \
-  && rm -rf /opt/jboss/bpms-projects \
   && chmod +x /opt/jboss/start.sh 
 
 # Run as JBoss 
