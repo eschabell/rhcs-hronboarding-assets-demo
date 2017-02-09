@@ -7,8 +7,8 @@ This demo is to install JBoss BPM Suite in the Cloud based on leveraging any Red
 It delivers a fully functioning JBoss BPM Suite process project for HR onboarding new employee asset management.
 
 
-Install JBoss BPM Suite OpenShift
----------------------------------
+Install Cloud HR Onboarding Asset Demo on OpenShift
+---------------------------------------------------
 1. First ensure you have an OpenShift container based installation, such as one of the followling installed first:
 
   - [OCP Install Demo](https://github.com/redhatdemocentral/ocp-install-demo)
