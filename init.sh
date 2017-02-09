@@ -145,6 +145,7 @@ if [ $? -ne 0 ]; then
 		echo "Error occurred during 'oc delete project' command... clean out project by hand."
 		echo
 	  exit
+	fi
 fi
 
 echo
