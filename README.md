@@ -66,10 +66,10 @@ See the tagged releases for the following versions of the product:
 
 - v1.0 - JBoss BPM Suite 6.4.0 and JBoss EAP 7.0.0 with HR onboarding assets project running on any given OpenShift installation.
 
-![OCP console](https://github.com/eschabell/rhcs-hronboarding-demo/blob/master/docs/demo-images/rhcs-bpms-ocp-console.png?raw=true)
+![OCP console](https://github.com/eschabell/rhcs-hronboarding-assets-demo/blob/master/docs/demo-images/rhcs-bpms-ocp-console.png?raw=true)
 
-![Process](https://github.com/eschabell/rhcs-hronboarding-demo/blob/master/docs/demo-images/rhcs-hronboarding-process.png?raw=true)
+![Process](https://github.com/eschabell/rhcs-hronboarding-assets-demo/blob/master/docs/demo-images/rhcs-hronboarding-process.png?raw=true)
 
-![Cloud Suite](https://github.com/eschabell/rhcs-hronboarding-demo/blob/master/docs/demo-images/rhcs-arch.png?raw=true)
+![Cloud Suite](https://github.com/eschabell/rhcs-hronboarding-assets-demo/blob/master/docs/demo-images/rhcs-arch.png?raw=true)
 
 
