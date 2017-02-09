@@ -1,0 +1,6 @@
+# pack-refs with: peeled
+0c1937738e4cf18199bb920dc2642f54ffbfa010 refs/heads/erics-uf-user
+2401c6b9f04a8291ea7581b1e0658fae282bb435 refs/heads/locks
+8184f44581538c6180205924b5b8b4d4d9542f94 refs/heads/mailman-uf-user
+00601e21af5121871e483a8b43dc331a2aa78c8f refs/heads/master
+c9f9cef106db54c74f22c9f63102b0aa18e86495 refs/heads/social
