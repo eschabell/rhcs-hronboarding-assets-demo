@@ -210,15 +210,15 @@ if [ $? -ne 0 ]; then
 fi
 
 echo
-echo "===================================================================="
-echo "=                                                                  ="
-echo "=  Login to JBoss BPM Suite to start exploring the project:        ="
-echo "=                                                                  ="
+echo "==========================================================================="
+echo "=                                                                         ="
+echo "=  Login to JBoss BPM Suite to start exploring the project:               ="
+echo "=                                                                         ="
 echo "=  http://rhcs-hronboarding-demo.$HOST_IP.xip.io/business-central   ="
-echo "=                                                                  ="
-echo "=  [ u:erics / p:jbossbpm1! ]                                      ="
-echo "=                                                                  ="
-echo "=  Note: it takes a few minutes to expose the service...           ="
-echo "=                                                                  ="
-echo "===================================================================="
+echo "=                                                                         ="
+echo "=  [ u:erics / p:jbossbpm1! ]                                             ="
+echo "=                                                                         ="
+echo "=  Note: it takes a few minutes to expose the service...                  ="
+echo "=                                                                         ="
+echo "==========================================================================="
 
