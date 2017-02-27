@@ -132,7 +132,7 @@ fi
 echo
 echo "Creating a new project..."
 echo
-oc new-project rhcs-hronboarding-demo 
+oc new-project app-dev-on-cloud-suite
 
 if [ $? -ne 0 ]; then
 	echo
@@ -201,7 +201,7 @@ fi
 echo
 echo "Creating an externally facing route by exposing a service..."
 echo
-oc expose service rhcs-hronboarding-demo --hostname="rhcs-hronboading-demo.$HOST_IP.xip.io"
+oc expose service rhcs-hronboarding-demo --port=8080 --hostname="rhcs-hronboarding-demo.$HOST_IP.xip.io"
 
 if [ $? -ne 0 ]; then
 	echo
