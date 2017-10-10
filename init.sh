@@ -4,10 +4,15 @@ AUTHORS="Phil Griffiths, Waqaas Kausar, Anthony Kesterton"
 AUTHORS2="Niraj Patel, Jon Walton, Eric D. Schabell"
 PROJECT="git@github.com:redhatdemocentral/rhcs-hronboading-assets-demo.git"
 SRC_DIR=./installs
-OPENSHIFT_USER=openshift-dev
-OPENSHIFT_PWD=devel
 BPMS=jboss-bpmsuite-6.4.0.GA-deployable-eap7.x.zip
 EAP=jboss-eap-7.0.0-installer.jar
+
+# Adjust these variables to point to an OCP instance.
+OPENSHIFT_USER=openshift-dev
+OPENSHIFT_PWD=devel
+HOST_IP=yourhost.com
+OCP_PRJ=appdev-in-cloud
+OCP_APP=rhcs-hronboarding-demo
 
 # prints the documentation for this script.
 function print_docs() 
@@ -132,26 +137,15 @@ fi
 echo
 echo "Creating a new project..."
 echo
-oc new-project app-dev-on-cloud-suite
-
-if [ $? -ne 0 ]; then
-	echo
-	echo "Error occurred during 'oc new-project' command, trying to remove old installtion..."
-	echo
-	oc delete project rhcs-hronboarding-demo
-
-  if [ $? -ne 0 ]; then
-		echo
-		echo "Error occurred during 'oc delete project' command... clean out project by hand."
-		echo
-	  exit
-	fi
-fi
+oc new-project $OCP_PRJ
 
 echo
 echo "Setting up a new build..."
 echo
-oc new-build "jbossdemocentral/developer" --name=rhcs-hronboarding-demo --binary=true
+oc delete bc "$OCP_APP" -n "$OCP_PRJ" >/dev/null 2>&1
+oc delete imagestreams "developer" >/dev/null 2>&1
+oc delete imagestreams "$OCP_APP" >/dev/null 2>&1
+oc new-build "jbossdemocentral/developer" --name="$OCP_APP" --binary=true
 
 if [ $? -ne 0 ]; then
 	echo
@@ -176,7 +170,7 @@ fi
 echo
 echo "Starting a build, this takes some time to upload all of the product sources for build..."
 echo
-oc start-build rhcs-hronboarding-demo --from-dir=. --follow=true --wait=true
+oc start-build $OCP_APP --from-dir=. --follow=true --wait=true
 
 if [ $? -ne 0 ]; then
 	echo
@@ -190,7 +184,7 @@ sleep 10
 echo
 echo "Creating a new application..."
 echo
-oc new-app rhcs-hronboarding-demo
+oc new-app $OCP_APP
 
 if [ $? -ne 0 ]; then
 	echo
@@ -201,7 +195,7 @@ fi
 echo
 echo "Creating an externally facing route by exposing a service..."
 echo
-oc expose service rhcs-hronboarding-demo --port=8080 --hostname="rhcs-hronboarding-demo.$HOST_IP.xip.io"
+oc expose service $OCP_APP --port=8080
 
 if [ $? -ne 0 ]; then
 	echo
@@ -214,7 +208,7 @@ echo "==========================================================================
 echo "=                                                                         ="
 echo "=  Login to JBoss BPM Suite to start exploring the project:               ="
 echo "=                                                                         ="
-echo "=  http://rhcs-hronboarding-demo.$HOST_IP.xip.io/business-central   ="
+echo "=  http://$OCP_APP-$OCP_PRJ.$HOST_IP.nip.io/business-central   ="
 echo "=                                                                         ="
 echo "=  [ u:erics / p:bpmsuite1! ]                                             ="
 echo "=                                                                         ="
