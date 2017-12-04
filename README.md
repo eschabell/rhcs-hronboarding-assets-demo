@@ -34,14 +34,31 @@ Now log in to JBoss BPM Suite to start exploring containerized HR onboaring new 
 
 Notes
 -----
+
+Should your local network DNS not handle the resolution of the above address, giving you page not found errors, you can apply the
+following to your local hosts file:
+
+```
+$ sudo vi /etc/hosts
+
+# add host for OCP demo resulution
+192.168.99.100   rhcs-hronboading-demo-appdev-in-cloud.192.168.99.100.nip.io 
+```
+
+-----
+
 This project can be installed on any OpenShift platform, such as OpenShift Container Platform or Red Hat Container Development Kit.
 It's possible to install it on any available installation by pointing this installer to an OpenShift IP address:
 ```
   $ ./init.sh IP
 ```
 
+-----
+
 If for any reason the installation breaks or you want a new JBoss BRMS installation, just remove the project rhcs-bpms-install-demo
 entry in the OpenShift console and re-run the installation.
+
+-----
 
 To clone a repository in the running container, the following actions would need to occur from a developer's machine.
 
