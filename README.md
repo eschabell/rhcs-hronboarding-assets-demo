@@ -1,3 +1,6 @@
+Update: June 2018 moved to [Gitlab](https://gitlab.com/eschabell/rhcs-hronboarding-assets-demo).
+
+
 Red Hat Cloud HR Onboarding Assets Demo 
 =======================================
 This demo is to install JBoss BPM Suite in the Cloud based on leveraging any Red Hat OpenShift container based platform such as:
